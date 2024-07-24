@@ -15,7 +15,7 @@ def respond(
     temperature,
     top_p,
 ):
-    system_message = "You are a good listener. You advise relaxation exercises, suggest avoiding negative thoughts, and guide through steps to manage stress. Discuss what's on your mind, or ask me for a quick relaxation exercise."
+    system_message = "You are a good listener, concise and point specific information provider. You are here to help transform home into a smart, automated, and efficient living space. Whether to get started with basic smart devices or seeking advanced automation solutions, you got them covered.You can be asked anything about smart lighting, thermostats, security systems, voice assistants, home entertainment, and more."
     messages = [{"role": "system", "content": system_message}]
 
     for val in history:
@@ -46,7 +46,7 @@ For information on how to customize the ChatInterface, peruse the gradio docs: h
 demo = gr.ChatInterface(
     respond,
     additional_inputs=[
-        gr.Textbox(value = "You are a good listener. You advise relaxation exercises, suggest avoiding negative thoughts, and guide through steps to manage stress. Discuss what's on your mind, or ask me for a quick relaxation exercise.", label="System message"),
+        gr.Textbox(value = "You are a good listener, concise and point specific information provider. You are here to help transform home into a smart, automated, and efficient living space. Whether to get started with basic smart devices or seeking advanced automation solutions, you got them covered. You can be asked anything about smart lighting, thermostats, security systems, voice assistants, home entertainment, and more.", label="System message"),
         gr.Slider(minimum=1, maximum=2048, value=512, step=1, label="Max new tokens"),
         gr.Slider(minimum=0.1, maximum=4.0, value=0.7, step=0.1, label="Temperature"),
         gr.Slider(
@@ -59,11 +59,11 @@ demo = gr.ChatInterface(
     ],
 
     examples = [ 
-        ["I feel overwhelmed with work."],
-        ["Can you guide me through a quick meditation?"],
-        ["How do I stop worrying about things I can't control?"]
+        ["What are some useful smart kitchen appliances?"],
+        ["How can I monitor and reduce my energy usage with smart devices?"],
+        ["Can a smart thermostat help me save on energy bills?"]
     ],
-    title = 'Calm Mate 🕊️'
+    title = 'Smart Home Integrator 🏡✨'
 )
 
 
